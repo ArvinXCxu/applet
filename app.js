@@ -32,6 +32,8 @@ App({
         }
       }
     })
+    //调用扫一扫
+    
   },
   globalData: {
     userInfo: null

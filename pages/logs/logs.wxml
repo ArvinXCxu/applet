@@ -1,5 +1,8 @@
 <!--logs.wxml-->
 <view class="container log-list">
+  <map longitude="{{longitude}} " latitude="{{latitude}}"></map>
+  <text class="log-item">{{'经度'}}. {{longitude}}</text>
+  <text class="log-item">{{'纬度'}}. {{latitude}}</text>
   <block wx:for="{{logs}}" wx:for-item="log">
     <text class="log-item">{{index + 1}}. {{log}}</text>
   </block>

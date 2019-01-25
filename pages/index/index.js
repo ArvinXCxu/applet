@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    motto: '我的第一个小程序',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -13,6 +13,13 @@ Page({
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
+    })
+  },
+  goLook:function(){
+    wx.scanCode({
+      success: (res) => {
+        console.log(res)
+      }
     })
   },
   onLoad: function () {
@@ -38,14 +45,13 @@ Page({
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
-            
+
           })
         }
       })
     }
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
